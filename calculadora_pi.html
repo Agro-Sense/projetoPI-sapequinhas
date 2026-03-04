@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Calculadora Financeira</h2>
+
+    Insira quantos hectares de plantio de morango você possui
+    <br> <input type="text" id="ipt_plantio"><br><br>
+    Insira quanto você produz no mês por hectare (kg)
+    <br> <input type="text" id="ipt_producao"><br><br>
+    insira o preço do morango por kg 
+    <br><input type="text" id="ipt_morango"><br><br>
+    Insira o quanto você gasta mensalmente com irrigação <br>
+    <input type="text" id="ipt_irrigacao"><br><br>
+
+    <button onclick="calcular()">Calcular</button>
+    <div id="dv_msg"></div>
+</body>
+<script>
+    function calcular() {
+       
+        let producao_atual= ipt_producao.value*0.70
+        let receita_atual = ipt_plantio.value * producao_atual * ipt_morango.value
+        let lucro_atual = receita_atual - Number(ipt_irrigacao.value)
+        let perda= (ipt_producao.value*0.30)*lucro_atual
+
+        //Calculo da economia de agua baseado na porcentagem do site canal rural 
+        let economia_agua = ipt_irrigacao.value * 0.20
+        let novo_gasto_irri = Number(ipt_irrigacao.value) - economia_agua
+      
+        /*Calculo de aumento de produção com a irrigação adequada com base na porcentagem citada
+        pelo site agricultura e negócio*/
+        let nova_producao = producao_atual * 1.30
+        let nova_receita = ipt_plantio.value * nova_producao * ipt_morango.value
+       
+        //lucro com o sensor
+        let novo_lucro = nova_receita - novo_gasto_irri
+        let diferenca = novo_lucro - lucro_atual
+        dv_msg.innerHTML = `
+        <b>--- Situação Atual ---</b> <br>
+        Custo com irrigação: R$${ipt_irrigacao.value} <br>
+        Lucro atual: R$${lucro_atual.toFixed(2)} <br>
+        Perda por doenças: R$${perda.toFixed(2)} <br><br>
+
+        <b>--- Com AgroSense ---</b> <br>
+        Receita com AgroSense: R$${nova_receita.toFixed(2)} <br>
+        Custo com AgroSense: R$${novo_gasto_irri.toFixed(2)} <br>
+        lucro com AgroSense: R$${novo_lucro.toFixed(2)} <br><br>
+
+        <b>O AgroSense faria você ganhar R$${diferenca.toFixed(2)} a mais por mês,
+         resolvendo seus problemas de morangos perdidos pelas doenças, ajudando a <br> 
+         produzir 30% a mais e reduzindo seus gastos com irrigação em 20%.</b>`
+           
+        
+
+    }
+
+    ipt_irrigacao.value=0
+    ipt_morango.value=0
+    ipt_plantio.value=0
+    ipt_producao.value=0
+</script>
+
+</html>

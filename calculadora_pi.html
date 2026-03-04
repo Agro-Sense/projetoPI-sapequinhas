@@ -28,7 +28,7 @@
         let producao_atual= ipt_producao.value*0.70
         let receita_atual = ipt_plantio.value * producao_atual * ipt_morango.value
         let lucro_atual = receita_atual - Number(ipt_irrigacao.value)
-        let perda= (ipt_producao.value*0.30)*receita_atual
+        let perda= (ipt_producao.value*0.30)*receita_atual//calculo errado
 
         //Calculo da economia de agua baseado na porcentagem do site canal rural 
         let economia_agua = ipt_irrigacao.value * 0.20

@@ -11,60 +11,55 @@
     <h2>Calculadora Financeira</h2>
 
     Insira quantos hectares de plantio de morango você possui
-    <br> <input type="text" id="ipt_plantio"><br><br>
+    <br><input type="number" id="ipt_plantio" placeholder="Ex: 0.5"><br><br>
     Insira quanto você produz no mês por hectare (kg)
-    <br> <input type="text" id="ipt_producao"><br><br>
-    Insira o preço do morango por kg 
-    <br><input type="text" id="ipt_morango"><br><br>
-    Insira o quanto você gasta mensalmente com irrigação <br>
-    <input type="text" id="ipt_irrigacao"><br><br>
+    <br><input type="number" id="ipt_producao" placeholder="Ex: 1500"><br><br>
+    Insira o preço do morango por kg
+    <br><input type="number" id="ipt_morango" placeholder="Ex: 8"><br><br>
+    Insira o quanto você gasta mensalmente com irrigação
+    <br><input type="number" id="ipt_irrigacao" placeholder="Ex: 400"><br><br>
 
     <button onclick="calcular()">Calcular</button>
     <div id="dv_msg"></div>
 </body>
+
 <script>
     function calcular() {
-       
-        let producao_atual= ipt_producao.value*0.70
+
+        // 30% da produção é perdida para doenças fúngicas sem monitoramento (Embrapa/Agrolink)
+        let producao_atual = ipt_producao.value * 0.70
         let receita_atual = ipt_plantio.value * producao_atual * ipt_morango.value
         let lucro_atual = receita_atual - Number(ipt_irrigacao.value)
-        let perda= (ipt_producao.value*0.30)*receita_atual//calculo errado
 
-        //Calculo da economia de agua baseado na porcentagem do site canal rural 
-        let economia_agua = ipt_irrigacao.value * 0.20
-        let novo_gasto_irri = Number(ipt_irrigacao.value) - economia_agua
-      
-        /*Calculo de aumento de produção com a irrigação adequada com base na porcentagem citada
-        pelo site agricultura e negócio*/
+        // kg perdido por hectare × preço = R$ perdido por doenças no mês
+        let perda = ipt_plantio.value * (ipt_producao.value * 0.30) * ipt_morango.value
+
+        // economia de 20% no gasto com irrigação (Canal Rural)
+        let novo_gasto_irri = Number(ipt_irrigacao.value) * 0.80; // 0.80 pois os 20% caiu fora com a chegada do agrosense, isso nao ta complexo plmds só pensar
+
+        // 30% a mais de produção com irrigação adequada (Agricultura e Negócio)
         let nova_producao = producao_atual * 1.30
         let nova_receita = ipt_plantio.value * nova_producao * ipt_morango.value
-       
-        //lucro com o sensor
+
+        // lucro com o sensor
         let novo_lucro = nova_receita - novo_gasto_irri
         let diferenca = novo_lucro - lucro_atual
+
         dv_msg.innerHTML = `
         <b>--- Situação Atual ---</b> <br>
-        Custo com irrigação: R$${ipt_irrigacao.value} <br>
+        Custo com irrigação: R$${Number(ipt_irrigacao.value).toFixed(2)} <br>
         Lucro atual: R$${lucro_atual.toFixed(2)} <br>
         Perda por doenças: R$${perda.toFixed(2)} <br><br>
 
         <b>--- Com AgroSense ---</b> <br>
         Receita com AgroSense: R$${nova_receita.toFixed(2)} <br>
         Custo com AgroSense: R$${novo_gasto_irri.toFixed(2)} <br>
-        lucro com AgroSense: R$${novo_lucro.toFixed(2)} <br><br>
+        Lucro com AgroSense: R$${novo_lucro.toFixed(2)} <br><br>
 
-        <b>O AgroSense faria você ganhar R$${diferenca.toFixed(2)} a mais por mês, ou seja,<br>
-       R$${(diferenca*12).toFixed(2)} por ano, resolvendo seus problemas de morangos perdidos pelas<br> 
-       doenças, ajudando a produzir 30% a mais e reduzindo seus gastos com irrigação em 20%.</b>`
-           
-        
-
+        <b>O AgroSense faria você ganhar R$${diferenca.toFixed(2)} a mais por mês, ou seja,
+        R$${(diferenca * 12).toFixed(2)} por ano, resolvendo seus problemas de morangos perdidos
+        pelas doenças, ajudando a produzir 30% a mais e reduzindo seus gastos com irrigação em 20%.</b>`
     }
-
-    ipt_irrigacao.value=''
-    ipt_morango.value=''
-    ipt_plantio.value=''
-    ipt_producao.value=''
 </script>
 
 </html>

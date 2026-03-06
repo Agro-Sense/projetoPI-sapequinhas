@@ -52,7 +52,7 @@ insert into cadastro values
 (default, 'Raízen','2025-06-14','Ativo',1,'1198987676'),
 (default, 'Agromania','2025-03-30','Cancelado',0,'1192987059'),
 (default, 'Sítio Oliveira','2026-02-08','Teste',1,'1198388831'),
-(default, 'Ferreira´s Agro','2026-01-11','Ativo',0,'1198886611');
+(default, 'Ferreiras Agro','2026-01-11','Ativo',0,'1198886611');
 
 insert into informacao_do_cliente values
 (default,'JBS', '33445468910023','1190028922','jbs@gmail.com','Guarulhos,SP'),
@@ -66,22 +66,18 @@ insert into informacao_da_plantacao values
 (default,'Raízen',10,15000,10000),
 (default,'Agromania',4,6800,4000),
 (default,'Sítio Oliveira',3,5000,3000),
-(default,'Ferreira´s Agro',8,10000,8000);
+(default,'Ferreiras Agro',8,10000,8000);
 
 insert into dados_do_sensor values
 (default,'JBS',default,54.01),
 (default,'Raízen',default,65.00),
 (default,'Agromania',default,77.00),
 (default,'Sítio Oliveira',default,68.50),
-(default,'Ferreira´s Agro',default,63.00);
+(default,'Ferreiras Agro',default,63.00);
 
 
 -- ----- Script de Query ------
-<<<<<<< HEAD
 select id, nome_da_empresa, data_cadastro, sts_plano,  case
-=======
-select id, nome_da_empresa, data_cadastro, sts_plano, case
->>>>>>> d120d57991e98278089a4650fd83fb6a2132a08e
 when aceite_dos_termos = 1 then 'Aceitou'
 else 'Não aceitou'
 end as termos_de_uso

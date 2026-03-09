@@ -1,11 +1,11 @@
 /*
 GRUPO 06 - 1SIS
-HENRIQUE REZENDE- 03261008
-JONAS FERNANDES- 03261024
-LUCAS GALVAO- 03261018
-LUIZ SOBRINHO- 03261015
-MARCUS VINICIUS- 03261056
-MATHEUS ANJOS -03261062
+HENRIQUE REZENDE - 03261008
+JONAS FERNANDES - 03261024
+LUCAS GALVAO - 03261018
+LUIZ SOBRINHO - 03261015
+MARCUS VINICIUS - 03261056
+MATHEUS ANJOS - 03261062
 */
 
 create database AgroSense;
@@ -49,7 +49,7 @@ id int primary key auto_increment,
 nome_da_empresa varchar(50) not null,
 ident_do_sensor int not null,
 data_horario_medicao datetime default current_timestamp(),
-porcentagem_umidade decimal (5,2) 
+porcentagem_umidade decimal (5,2) constraint chk_porcentagem check(porcentagem_umidade between 0 and 100) 
 );
 
 -- inserindo dados
@@ -65,7 +65,7 @@ insert into informacao_do_cliente values
 (default,'Raízen','12332144557682','1198987676','raizen@gmail.com','Parati','RJ'),
 (default,'Agromania','88779909028145','1192987059','agromania@gmail.com','São Bernardo','SP'),
 (default,'Sítio Oliveira','14357869942132','1198388831','st.oliveira@gmail.com','Araraquara','SP'),
-(default,'Ferreiras Agro','66745321987008','1198886611','ferreira.agro@gmail.com','São Carlos','RJ');
+(default,'Ferreira´s Agro','66745321987008','1198886611','ferreira.agro@gmail.com','São Carlos','RJ');
 
 insert into informacao_da_plantacao values
 (default,'JBS',5,7500),
@@ -82,23 +82,23 @@ Insert into qntd_de_sensores values
 (default,'Ferreira´s Agro',8);
 
 insert into dados_dos_sensores values
-(default,'JBS','1',default,54.01),
-(default,'JBS','2',default,65.00),
-(default,'JBS','3',default,77.00),
-(default,'JBS','4',default, null),
-(default,'JBS','5',default,63.00);
+(default,'JBS',1,default,54.01),
+(default,'JBS',2,default,65.00),
+(default,'JBS',3,default,77.00),
+(default,'JBS',4,default, null),
+(default,'JBS',5,default,63.00);
 
 
 -- ----- Script de Query ------
 select * from cadastro;
 select * from informacao_do_cliente;
 select * from informacao_da_plantacao;
-select * from qntd_de_sensore;
+select * from qntd_de_sensores;
 
 Select *, case
+When porcentagem_umidade is null THEN 'ALERTA SENSOR COM DEFEITO'
 when porcentagem_umidade <65 THEN 'ALERTA DE SOLO SECO'
 When porcentagem_umidade >75 THEN 'ALERTA DE EXCESSO DE ÁGUA'
-When porcentagem_umidade is null THEN 'ALERTA SENSOR COM DEFEITO'
 else 'UMIDADE ESTÁ NO NÍVEL CORRETO'
 end as status_umidade
 FROM dados_dos_sensores;

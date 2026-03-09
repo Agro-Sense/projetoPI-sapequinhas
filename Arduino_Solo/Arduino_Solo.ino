@@ -23,19 +23,19 @@ void loop() {
   if (porcentagemUmidade < 0) porcentagemUmidade = 0;
   if (porcentagemUmidade > 100) porcentagemUmidade = 100;
 
-  Serial.print("Bruto: ");            // Nome que vai aparecer no gráfico
+  Serial.print("Bruto:");            // Nome que vai aparecer no gráfico
   Serial.print(valorUmidadeSolo);     // Valor BRUTO da umidade
   Serial.print(" | ");                // espaço para separar este do próximo print
-
-  Serial.print("Porcentagem: ");      // Nome que aparece no gráfico
+  
+  Serial.print("Porcentagem:");      // Nome que aparece no gráfico
   Serial.print(porcentagemUmidade);   // Valor da umidade calculado em PORCENTAGEM a partir do valor bruto
   Serial.print(" | ");              
 
-  Serial.print("Minimo: ");           // Nome do valor "minimo" que aparecerá no gráfico
+  Serial.print("Minimo:");           // Nome do valor "minimo" que aparecerá no gráfico
   Serial.print(minimo);               // valor minimo: 65
   Serial.print(" | ");
 
-  Serial.print("Maximo: ");           // Nome do valor "máximo" que aparecerá no gráfico
+  Serial.print("Maximo:");           // Nome do valor "máximo" que aparecerá no gráfico
   Serial.println(maximo);             // Envia o valor máximo: 75 e quebra linha
   
   /*

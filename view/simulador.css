@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+.barraFixa {
+    background-color: #006852;
+    height: 70px;
+    color: white;
+    font-size: 30px; 
+    display: flex;
+    align-items: center;
+    justify-content: center; /* centraliza o título */
+    position: relative;
+}
+
+
+
+.titulo {
+    text-align: center;
+}
+
+
+.voltar {
+    position: absolute;
+    right: 40px;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #f7fdf5;
+}
+
+.conteudo_de_texto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteudo_de_input {
+    gap: 30px;
+}
+
+.titulo_calculadora {
+    font-size: 60px;
+    color: #058246;
+}
+
+.caixa_inputs {
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+}
+
+.ipt_com_titulo {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 300px;
+    height: 50px;
+    border: solid #00000062 2px;
+    border-radius: 25px;
+
+
+}
+
+input::placeholder {
+    padding-left: 20px;
+}
+
+.btn_calcular {
+    width: 300px;
+    height: 50px;
+    border: solid #00000062 1px;
+    border-radius: 25px;
+    background-color: #006852;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+.frase_resultado {
+    background-color: #006852;
+    ;
+    width: 700px;
+    height: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa_analise {
+    gap: 10px;
+}
+
+.texto_olhometro {
+    color: #737373;
+}
+
+.barraOlhometro {
+    width: 21em;
+    height: 1em;
+    background-image: linear-gradient(to right, #a6a6a6, #545454);
+    border-radius: 20px;
+}
+
+.span_agroSense {
+    color: #058246;
+    font-weight: 500;
+}
+
+.barraAgroSense {
+    width: 21em;
+    height: 1em;
+    background-image: linear-gradient(to right, #12a149 70%, #545454);
+    border-radius: 20px;
+}
+
+.texto_aumento_porcentagem {
+
+    color: #12a149;
+}

@@ -58,11 +58,10 @@ main {
 }
 
 .caixa_inputs {
-
     display: flex;
     flex-direction: row;
     gap: 20px;
-
+    
 }
 
 .ipt_com_titulo {

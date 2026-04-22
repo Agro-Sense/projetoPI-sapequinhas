@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="stylesheet" href="dashboard.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implementando o ChartJs</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+      <div class="total-graficos">
+        <div class="estilo-grafico1">
+          <div class="variação">
+            <canvas id="myChart1" style="height: 300px; width:300px;"></canvas>
+          </div>
+          <div class="comportamento">
+            <canvas id="myChart2" style="height: 300px; width: 300px;"></canvas>
+          </div>
+        </div>
+
+        <div class="estilo-grafico2">
+          <div class="sensores">
+            <canvas id="myChart3" style="height: 300px; width: 300px;"></canvas>
+          </div>
+          <div class="meses">
+            <canvas id="myChart4" style="height: 300px; width: 300px;"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+        <div class="kpi_1">Maior Porcentagem de Umidade Registrada: 85% <br> Menor Porcentagem de Umidade Registrada:59%</div>
+        <div class="kpi_2">Alerta de Registro Prejudicial - <br> Você possui porcentagens de umidade baixa!</div>
+        <div class="kpi_3">Erro de Sensor - <br> O sensor de ID: SENSOR_UMID_001 e o Sensor de ID: SENSOR_UMID_004,estãoinativos.</div>
+        <div class="kpi_4">Progresso na Produção - <br> O seu último melhor mês foi Dezembro.</div>
+        <div class="kpi_5">Condição de Cultivo - <br> Fique atento(a), o mês de Março historicamente, apresentamenores níveis de produção.</div>
+      
+</body>
+<script>
+
+  const labels1 = ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'];
+
+  const data1 = {
+    labels: labels1,
+    datasets: [{
+      label: 'Variação da Umidade do Solo em Tempo Real',
+      backgroundColor: 'rgba(144, 238, 144, 0.2)',
+      borderColor: 'rgb(144, 238, 144)',
+      borderWidth: 1,
+      data: [78, 77, 77, 76, 75, 74, 73, 85, 83, 80, 76, 72, 68, 65, 62, 60, 59, 61, 64, 67, 70, 72, 74, 76],
+      fill: true
+    }]
+  };
+
+  const config1 = {
+    type: 'line',
+    data: data1,
+    options: {}
+  };
+
+  const data2 = {
+    labels: ['Seco', 'Ideal', 'Úmido'],
+    datasets: [{
+      label: 'Comportamento da Umidade do Solo',
+      data: [5, 17, 2],
+      backgroundColor: ['rgba(78, 147, 230, 0.2)', 'rgba(237, 189, 76, 0.2)', 'rgba(178, 34, 34, 0.2)'],
+      hoverOffset: 4
+    }]
+  };
+
+  const config2 = {
+    type: 'pie',
+    data: data2,
+  };
+
+  const data3 = {
+    labels: ['Inativos', 'Ativos'],
+    datasets: [{
+      label: 'Funcionamento dos sensores',
+      data: [2, 8],
+      backgroundColor: ['rgba(178, 34, 34, 0.2)', 'rgba(144, 238, 144, 0.2)'],
+      hoverOffset: 4
+    }]
+  };
+
+  const config3 = {
+    type: 'pie',
+    data: data3,
+  };
+
+  const labels4 = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+  const data4 = {
+    labels: labels4,
+    datasets: [{
+      label: 'Nível de Produção',
+      data: [6.6, 6.7, 1.5, 1.8, 1.7, 1.6, 1.7, 1.9, 6.5, 6.8, 6.8, 6.7],
+      backgroundColor: [
+        'rgba(144, 238, 144, 0.2)', 'rgba(144, 238, 144, 0.2)', 'rgba(144, 238, 144, 0.2)',
+        'rgba(144, 238, 144, 0.2)', 'rgba(144, 238, 144, 0.2)', 'rgba(144, 238, 144, 0.2)',
+        'rgba(144, 238, 144, 0.2)', 'rgba(144, 238, 144, 0.2)', 'rgba(144, 238, 144, 0.2)',
+        'rgba(144, 238, 144, 0.2)', 'rgba(144, 238, 144, 0.2)', 'rgba(144, 238, 144, 0.2)'
+      ],
+      borderColor: [
+        'rgb(144, 238, 144)', 'rgb(144, 238, 144)', 'rgb(144, 238, 144)',
+        'rgb(144, 238, 144)', 'rgb(144, 238, 144)', 'rgb(144, 238, 144)',
+        'rgb(144, 238, 144)', 'rgb(144, 238, 144)', 'rgb(144, 238, 144)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  const config4 = {
+    type: 'bar',
+    data: data4,
+    options: {
+      scales: { y: { beginAtZero: true } }
+    },
+  };
+
+  new Chart(document.getElementById('myChart1'), config1);
+  new Chart(document.getElementById('myChart2'), config2);
+  new Chart(document.getElementById('myChart3'), config3);
+  new Chart(document.getElementById('myChart4'), config4);
+
+</script>
+
+</html>

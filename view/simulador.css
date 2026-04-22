@@ -7,6 +7,15 @@
     font-style: normal;
 }
 
+header {
+    width: 100vw;
+    height:6em;
+}
+
+body {
+     background-color: #f7fdf5;
+}
+
 .barraFixa {
     background-color: #006852;
     height: 70px;
@@ -15,8 +24,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* centraliza o título */
-    position: relative;
+
 }
 
 
@@ -35,18 +43,17 @@
 }
 
 .voltar:hover {
-    opacity: 0.8;
+    color: #ffffffd7;
 }
 
 main {
-    width: 100vw;
-    height: 100vh;
+   
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    background-color: #f7fdf5;
+   
 }
 
 .conteudo_de_texto {
@@ -63,6 +70,7 @@ main {
 .titulo_calculadora {
     font-size: 60px;
     color: #058246;
+   
 }
 
 .caixa_inputs {

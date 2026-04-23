@@ -21,8 +21,22 @@
             <input class='ipt' type="password" id="ipt_Senha_User" placeholder="senhasilvestres"> <br><br>
             
             <button id="button_registro" onclick="Registrar()">Cadastrar</button> <br><br>
-            <a class='acesso' href="siteEstaticoLogin.html" target="_blank">Já tem conta? Faça Login</a>
+            <button class='acesso' onclick="irLogin()">Já tem conta? Faça Login</button>
         </div>
+
+         <div id="tela_login" class="div_tela_cadastro_login" style="display: none;">
+        <h2 class="tituloAgroSense">AgroSense</h2> <br>
+        <h3>Login</h3> <br>
+        Usuário: <br>
+        <input class='ipt' type="text" id="ipt_Login_User" placeholder="josé@morangos.silvestres.com"> <br><br>
+        Senha: <br>
+        <input class='ipt' type="password" id="ipt_Login_Senha" placeholder="senhasilvestres"> <br><br>
+
+        <button id="button_registro" onclick="Validar()">Entrar</button> <br><br>
+        <a class='acesso' href="siteEstaticoCadastro.html" target="_blank">Não tem conta? Cadastre-se</a>
+    </div>
+
+
     </main>
 
     <br>

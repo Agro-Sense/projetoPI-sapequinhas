@@ -22,6 +22,7 @@ function Registrar() {
         listaUsuarios.push(user);
         listaSenhas.push(senha);
         listaEmpresas.push(empresa);
+        console.log(listaUsuarios);
 
         div_msg.innerHTML = " <p id='msg_alerta'>Cadastro realizado! Agora você pode fazer login.</p>";
         ipt_Empresa.value = "";
@@ -41,4 +42,12 @@ function Validar() {
     } else {
         div_msg.innerHTML = " <p id='msg_alerta'>Usuário ou senha incorretos!</p>";
     }
+
+   
+}
+
+function irLogin() {
+ document.getElementById("tela_cadastro").style.display="none";
+    document.getElementById("tela_login").style.display="block";
+    console.log(listaUsuarios);
 }

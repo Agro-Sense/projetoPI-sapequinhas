@@ -5,6 +5,32 @@
     padding: 0;
     text-decoration: none;
 }
+.barradashboard {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    width: 100%  ;
+    background-color:  #6bad60;
+    justify-content: center;
+    height:40px;
+    border-radius: 30px;
+    margin-top: 4%;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.tituloDashboard {
+     text-align: center;
+}
+.voltarDashboard {
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    right: 40px;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
 
 .body {
     width: 100%;
@@ -22,99 +48,111 @@
     justify-content: center;
     flex-direction: column;
     padding: 20px;
+    padding-left: 180px;
 }
 
 .estilo-grafico1 {
     padding: 20px;
     display: flex;
     flex-direction: row;
+    gap: 40px;
 }
 
 .estilo-grafico2 {
     padding: 20px;
     display: flex;
     flex-direction: row;
+    gap: 40px;
+}
+
+.allkpi {
+    top: 30;
 }
 
 .kpi_1 {
     display: flex;
     width: 30%;
-    background-color: #184c0f;
-    justify-content: flex-end;
+    background-color: #6bad60;
+    justify-content: center;
     height: auto;
     border-radius: 30px;
     position: fixed;
     right: 20px;  
     bottom: 600px; 
     font-family: "Poppins", sans-serif;
-    font-weight: 100;
+    font-weight: 500;
     font-style: normal;
     color: aliceblue;
     padding: 20px;
+    text-align: center;
 }
 
 .kpi_2 {
     display: flex;
     width: 30%;
-    background-color: #184c0f;
-    justify-content: flex-end;
+    background-color: #6bad60;
+    justify-content: center;
     height: auto;
     border-radius: 30px;
     position: fixed;
     right: 20px;  
     bottom: 500px; 
     font-family: "Poppins", sans-serif;
-    font-weight: 100;
+    font-weight: 500;
     font-style: normal;
     color: aliceblue;
     padding: 20px;
+    text-align: center;
 }
 
 .kpi_3 {
     display: flex;
     width: 30%;
-    background-color: #184c0f;
-    justify-content: flex-end;
+    background-color: #6bad60;
+    justify-content: center;
     height: auto;
     border-radius: 30px;
     position: fixed;
     right: 20px;  
     bottom: 350px; 
     font-family: "Poppins", sans-serif;
-    font-weight: 100;
+    font-weight: 500;
     font-style: normal;
     color: aliceblue;
     padding: 20px;
+    text-align: center;
 }
 .kpi_4 {
     display: flex;
     width: 30%;
-    background-color: #184c0f;
-    justify-content: flex-end;
+    background-color: #6bad60;
+    justify-content: center;
     height: auto;
     border-radius: 30px;
     position: fixed;
     right: 20px;  
     bottom: 250px; 
     font-family: "Poppins", sans-serif;
-    font-weight: 100;
+    font-weight: 500;
     font-style: normal;
     color: aliceblue;
     padding: 20px;
+    text-align: center;
 }
 .kpi_5 {
     display: flex;
     width: 30%;
-    background-color: #184c0f;
-    justify-content: flex-end;
+    background-color: #6bad60;
+    justify-content:center;
     height: auto;
     border-radius: 30px;
     position: fixed;
     right: 20px;  
     bottom: 100px; 
     font-family: "Poppins", sans-serif;
-    font-weight: 100;
+    font-weight: 500;
     font-style: normal;
     color: aliceblue;
     padding: 20px;
+    text-align: center;
 }

@@ -12,42 +12,67 @@
 <body>
   <header>
     <nav class="barradashboard">
-      <span class="tituloDashboard">Olá José! Seja bem-vindo ao painel de indicadores de desempenho da sua plantação</span>
-      <span class="voltarDashboard">Voltar</span>
+      <span class="tituloDashboard">Olá José! Seja bem-vindo ao Painel de Indicadores de Desempenho da sua
+        Plantação</span>
     </nav>
   </header>
+  <aside class="sidebar">
+    <div class="logo-sidebar">
+      <h2>AgroSense</h2>
+      <nav class="menu-itens">
+        <a href="#" class="active">Dashboard</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" class="btn-sair">Sair</a>
+      </div>
+  </aside>
+  <div class="allkpi">
+
+    <div class="kpi_1">Maior Porcentagem de Umidade Registrada: 85% <br> Menor Porcentagem de Umidade Registrada:59%
+    </div>
+    <div class="kpi_2"><b>Alerta de Registro Prejudicial</b> - <br> Você possui porcentagens de umidade baixa!</div>
+    <div class="kpi_3"><b>Erro de Sensor</b> - <br> O sensor de ID: SENSOR_UMID_001 e o Sensor de ID: SENSOR_UMID_004,
+      estão
+      inativos.</div>
+    <div class="kpi_4"><b>Progresso na Produção</b> - <br> O seu último melhor mês foi Dezembro.</div>
+    <div class="kpi_5"><b>Condição de Cultivo</b> - <br> Fique atento(a), o mês de Março historicamente,
+      apresentamenores
+      níveis
+      de produção.</div>
+
+  </div>
   <div class="total-graficos">
     <div class="estilo-grafico1">
       <div class="variação">
-        <canvas id="myChart1" style="height: 300px; width:300px;"></canvas>
+        <div class="card-grafico">
+          <h3 class="titulo-grafico">Variação da Umidade do Solo</h3>
+          <canvas id="myChart1" style="height: 300px; width:300px;"></canvas>
+        </div>
       </div>
       <div class="comportamento">
-        <canvas id="myChart2" style="height: 300px; width: 300px;"></canvas>
+        <div class="card-grafico">
+          <h3 class="titulo-grafico">Comportamento da Umidade do Solo</h3>
+          <canvas id="myChart2" style="height: 400px; width: 250px;"></canvas>
+        </div>
       </div>
     </div>
-
     <div class="estilo-grafico2">
       <div class="sensores">
-        <canvas id="myChart3" style="height: 300px; width: 300px;"></canvas>
+        <div class="card-grafico">
+          <h3 class="titulo-grafico">Funcionamento dos sensores</h3>
+          <canvas id="myChart3" style="height: 300px; width: 300px;"></canvas>
+        </div>
       </div>
       <div class="meses">
-        <canvas id="myChart4" style="height: 300px; width: 300px;"></canvas>
+        <div class="card-grafico">
+          <h3 class="titulo-grafico">Nível da Produção</h3>
+          <canvas id="myChart4" style="height: 300px; width: 300px;"></canvas>
+        </div>
       </div>
     </div>
 
   </div>
-
-  <div class="allkip">
-
-  <div class="kpi_1">Maior Porcentagem de Umidade Registrada: 85% <br> Menor Porcentagem de Umidade Registrada:59%</div>
-  <div class="kpi_2">Alerta de Registro Prejudicial - <br> Você possui porcentagens de umidade baixa!</div>
-  <div class="kpi_3">Erro de Sensor - <br> O sensor de ID: SENSOR_UMID_001 e o Sensor de ID: SENSOR_UMID_004, estão
-    inativos.</div>
-  <div class="kpi_4">Progresso na Produção - <br> O seu último melhor mês foi Dezembro.</div>
-  <div class="kpi_5">Condição de Cultivo - <br> Fique atento(a), o mês de Março historicamente, apresentamenores níveis
-    de produção.</div>
-
-    </div>
 </body>
 <script>
 

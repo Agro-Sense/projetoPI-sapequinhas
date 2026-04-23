@@ -31,23 +31,48 @@ function Registrar() {
     }
 }
 
-function Validar() {
-    var userLogin = ipt_Login_User.value.toLowerCase();
-    var senhaLogin = ipt_Login_Senha.value;
 
-    var indice = listaUsuarios.indexOf(userLogin);
-
-    if (indice != -1 && listaSenhas[indice] == senhaLogin) {
-        div_msg.innerHTML = ` <p id='msg_alerta'>Login realizado! Bem-vindo(a) da empresa</p>  ${listaEmpresas[indice]}`;
-    } else {
-        div_msg.innerHTML = " <p id='msg_alerta'>Usuário ou senha incorretos!</p>";
-    }
-
-   
-}
 
 function irLogin() {
  document.getElementById("tela_cadastro").style.display="none";
     document.getElementById("tela_login").style.display="block";
     console.log(listaUsuarios);
+}
+
+let tentativas = 3;
+
+function Validar() {
+    var userLogin = ipt_Login_User.value.toLowerCase();
+    var senhaLogin = ipt_Login_Senha.value;
+    var msg_erro = "";
+
+    var indice = listaUsuarios.indexOf(userLogin);
+
+    if (userLogin == "" || senhaLogin == "") {
+        alert(`Preencha todos os campos!`);
+
+    } else if (indice == -1) {
+        alert(`Usuário não encontrado`);
+
+    } else if (listaSenhas[indice] != senhaLogin) {
+
+       let i = 0;
+
+        while (i < 1) {
+            tentativas--;
+            i++;
+        }
+
+        if (tentativas > 0) {
+            msg_erro = `<p id='msg_alerta'>Senha incorreta. Restam ${tentativas} tentativas</p>`;
+        } else {
+            msg_erro = `<p id='msg_alerta'>Acesso bloqueado!</p>`;
+        }
+
+    } else {
+        tentativas = 3;
+        div_msg.innerHTML = `<p id='msg_alerta'>Login realizado! Bem-vindo(a) a AgroSense</p> `;
+    }
+
+    div_msg.innerHTML = msg_erro;
 }

@@ -25,6 +25,18 @@ body {
 
 .div_tela_cadastro_login {
     margin-top: 5%;
+    flex-direction: column;
+    background-image: linear-gradient(45deg, #306a2d, #4a8f4a);
+    width: 300px;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 2px 2px #514b4b;
+    text-align: center;
+}
+
+
+.div_tela_cadastro {
+    margin-top: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +47,6 @@ body {
     border-radius: 30px;
     box-shadow: 2px 2px 2px 2px #514b4b;
 }
-
 .tituloAgroSense {
     color: aliceblue;
 }
@@ -93,3 +104,8 @@ body {
 .acesso:hover {
     color: #d7d7d7;
 }
+
+
+
+
+

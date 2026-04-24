@@ -72,6 +72,8 @@ function Validar() {
     } else {
         tentativas = 3;
         div_msg.innerHTML = `<p id='msg_alerta'>Login realizado! Bem-vindo(a) a AgroSense</p> `;
+        window.location.href = ("chart_dashboard.html");
+
     }
 
     div_msg.innerHTML = msg_erro;
